@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/todos-machine-react/static/css/main.5ae4168d.chunk.css",
+    "main.js": "/todos-machine-react/static/js/main.4512d3c5.chunk.js",
+    "main.js.map": "/todos-machine-react/static/js/main.4512d3c5.chunk.js.map",
+    "runtime-main.js": "/todos-machine-react/static/js/runtime-main.05fdef45.js",
+    "runtime-main.js.map": "/todos-machine-react/static/js/runtime-main.05fdef45.js.map",
+    "static/js/2.ba179c2c.chunk.js": "/todos-machine-react/static/js/2.ba179c2c.chunk.js",
+    "static/js/2.ba179c2c.chunk.js.map": "/todos-machine-react/static/js/2.ba179c2c.chunk.js.map",
+    "index.html": "/todos-machine-react/index.html",
+    "static/css/main.5ae4168d.chunk.css.map": "/todos-machine-react/static/css/main.5ae4168d.chunk.css.map",
+    "static/js/2.ba179c2c.chunk.js.LICENSE.txt": "/todos-machine-react/static/js/2.ba179c2c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05fdef45.js",
+    "static/js/2.ba179c2c.chunk.js",
+    "static/css/main.5ae4168d.chunk.css",
+    "static/js/main.4512d3c5.chunk.js"
+  ]
+}
