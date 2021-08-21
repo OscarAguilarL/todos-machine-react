@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { TodoContext } from '../../Context/TodoContext';
+import './CreateTodoForm.css'
 
 const CreateTodoForm = () => {
   const { addTodo } = useContext(TodoContext);
@@ -21,7 +22,7 @@ const CreateTodoForm = () => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={onSubmit}>
         <textarea
           placeholder="Escribe una tarea..."
@@ -29,14 +30,14 @@ const CreateTodoForm = () => {
           onChange={onInputChange}
         ></textarea>
 
-        <div>
+        <div className="button-container">
           <button type="button" onClick={onCancel}>
             Cancelar
           </button>
-          <button type="submit">Añadir</button>
+          <button type="submit" className="is-primary" >Añadir</button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
