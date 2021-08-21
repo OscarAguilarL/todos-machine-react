@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Consumer } from '../../Context/TodoContext';
+import { TodoContext, TodoProvider } from '../../Context/TodoContext';
 import { CreateTodoButton } from '../../components/CreateTodoButton/CreateTodoButton';
 import { TodoCounter } from '../../components/TodoCounter/TodoCounter';
 import { TodoItem } from '../../components/TodoItem/TodoItem';
@@ -9,19 +9,16 @@ import { TodoSearch } from '../../components/TodoSearch/TodoSearch';
 import { Wrapper } from '../Wrapper';
 
 export const AppUI = () => {
+
+  // const context = useContext(contextValue)
+
   return (
     <>
       <Wrapper>
         <TodoCounter />
         <TodoSearch />
-        <Consumer>
-          {({
-            error,
-            loading,
-            searchedTodos,
-            completeTodo,
-            deleteTodo
-          }) => (
+        <TodoContext.Consumer>
+          {({ error, loading, searchedTodos, completeTodo, deleteTodo }) => (
             <TodoList>
               {error && <p>Hubo un error...</p>}
               {loading && <p>Cargando...</p>}
@@ -39,7 +36,7 @@ export const AppUI = () => {
               ))}
             </TodoList>
           )}
-        </Consumer>
+        </TodoContext.Consumer>
         <CreateTodoButton />
       </Wrapper>
     </>

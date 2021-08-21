@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
-const { Provider, Consumer } = createContext();
+const TodoContext = createContext();
 
-const TodoContext = ({ children }) => {
+const TodoProvider = ({ children }) => {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -49,7 +49,7 @@ const TodoContext = ({ children }) => {
 
   return (
     <>
-      <Provider
+      <TodoContext.Provider
         value={{
           loading,
           error,
@@ -63,9 +63,9 @@ const TodoContext = ({ children }) => {
         }}
       >
         {children}
-      </Provider>
+      </TodoContext.Provider>
     </>
   );
 };
 
-export { TodoContext, Consumer };
+export { TodoContext, TodoProvider };
