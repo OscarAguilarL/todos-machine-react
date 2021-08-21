@@ -6,11 +6,19 @@ import { TodoCounter } from '../../components/TodoCounter/TodoCounter';
 import { TodoItem } from '../../components/TodoItem/TodoItem';
 import { TodoList } from '../../components/TodoList/TodoList';
 import { TodoSearch } from '../../components/TodoSearch/TodoSearch';
-import { Wrapper } from '../Wrapper';
+import { Wrapper } from '../Wrapper/Wrapper';
+import { Modal } from '../../components/Modal/Modal';
 
 export const AppUI = () => {
-  const { error, loading, searchedTodos, completeTodo, deleteTodo } =
-    useContext(TodoContext);
+  const {
+    error,
+    loading,
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    openModal,
+    setOpenModal,
+  } = useContext(TodoContext);
 
   return (
     <>
@@ -31,7 +39,12 @@ export const AppUI = () => {
             />
           ))}
         </TodoList>
-        <CreateTodoButton />
+        {openModal && (
+          <Modal>
+            <p>{searchedTodos[0]?.text}</p>
+          </Modal>
+        )}
+        <CreateTodoButton setOpenModal={setOpenModal} />
       </Wrapper>
     </>
   );

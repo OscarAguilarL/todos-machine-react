@@ -1,9 +1,9 @@
 import React from 'react';
 import './CreateTodoButton.css';
 
-export const CreateTodoButton = () => {
-  const handleClick = (event) => {
-    alert(event);
+export const CreateTodoButton = ({ setOpenModal }) => {
+  const handleClick = () => {
+    setOpenModal();
   };
 
   return (
@@ -11,8 +11,8 @@ export const CreateTodoButton = () => {
       <button
         className="CreateTodoButton"
         type="submit"
-        onClick={() => handleClick('hola')}
-      ></button>
+        onClick={() => handleClick()}
+      >+</button>
     </>
   );
 };
