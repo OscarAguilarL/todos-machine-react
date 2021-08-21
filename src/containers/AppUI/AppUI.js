@@ -8,6 +8,8 @@ import { TodoSearch } from '../../components/TodoSearch/TodoSearch';
 import { Wrapper } from '../Wrapper';
 
 export const AppUI = ({
+  loading,
+  error,
   totalTodos,
   completedTodos,
   searchValue,
@@ -22,6 +24,9 @@ export const AppUI = ({
         <TodoCounter completed={completedTodos} total={totalTodos} />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
         <TodoList>
+          {error && <p>Hubo un error...</p>}
+          {loading && <p>Cargando...</p>}
+          {!loading && !searchedTodos.length && <p>¡Crea tu primer TODO!</p>}
           {searchedTodos.map((todo, index) => (
             <TodoItem
               text={todo.text}
