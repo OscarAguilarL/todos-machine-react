@@ -11,7 +11,15 @@
   font-size: 2rem;
   color: white;
   z-index: 999;
+
+  transform: rotate(0);
+  transition: 0.3s ease;
 }
+
+.CreateTodoButton:hover {
+  transform: rotate(224deg);
+}
+
 @media screen and (max-width: 768px) {
   .CreateTodoButton {
     right: 12px;

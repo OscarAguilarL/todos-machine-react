@@ -16,7 +16,7 @@ export const CreateTodoButton = () => {
         type="submit"
         onClick={() => handleClick()}
       >
-        {openModal ? 'x' : '+'}
+        +
       </button>
     </>
   );
