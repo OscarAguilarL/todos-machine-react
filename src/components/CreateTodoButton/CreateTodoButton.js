@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../../Context/TodoContext';
 import './CreateTodoButton.css';
 
-export const CreateTodoButton = ({ setOpenModal }) => {
+export const CreateTodoButton = () => {
+  const { openModal, setOpenModal } = useContext(TodoContext);
+
   const handleClick = () => {
-    setOpenModal();
+    setOpenModal(!openModal);
   };
 
   return (
@@ -12,7 +15,9 @@ export const CreateTodoButton = ({ setOpenModal }) => {
         className="CreateTodoButton"
         type="submit"
         onClick={() => handleClick()}
-      >+</button>
+      >
+        {openModal ? 'x' : '+'}
+      </button>
     </>
   );
 };

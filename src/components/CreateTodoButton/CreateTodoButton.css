@@ -8,14 +8,10 @@
   block-size: 40px;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.CreateTodoButton::before {
-  content: '+';
   font-size: 2rem;
   color: white;
+  z-index: 999;
 }
-
 @media screen and (max-width: 768px) {
   .CreateTodoButton {
     right: 12px;

@@ -44,7 +44,7 @@ export const AppUI = () => {
             <p>{searchedTodos[0]?.text}</p>
           </Modal>
         )}
-        <CreateTodoButton setOpenModal={setOpenModal} />
+        <CreateTodoButton />
       </Wrapper>
     </>
   );
