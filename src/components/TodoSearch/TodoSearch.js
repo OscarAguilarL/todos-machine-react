@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../../Context/TodoContext';
 import './TodoSearch.css';
 
-export const TodoSearch = ({ searchValue, setSearchValue }) => {
+export const TodoSearch = () => {
   const handleTodoSearchInput = (event) => {
     setSearchValue(event.target.value);
   };
+
+  const { searchValue, setSearchValue } = useContext(TodoContext);
 
   return (
     <div className="TodoSearch">

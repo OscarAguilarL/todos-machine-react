@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { TodoContext, TodoProvider } from '../../Context/TodoContext';
+import { TodoContext } from '../../Context/TodoContext';
 import { CreateTodoButton } from '../../components/CreateTodoButton/CreateTodoButton';
 import { TodoCounter } from '../../components/TodoCounter/TodoCounter';
 import { TodoItem } from '../../components/TodoItem/TodoItem';
@@ -9,34 +9,28 @@ import { TodoSearch } from '../../components/TodoSearch/TodoSearch';
 import { Wrapper } from '../Wrapper';
 
 export const AppUI = () => {
-
-  // const context = useContext(contextValue)
+  const { error, loading, searchedTodos, completeTodo, deleteTodo } =
+    useContext(TodoContext);
 
   return (
     <>
       <Wrapper>
         <TodoCounter />
         <TodoSearch />
-        <TodoContext.Consumer>
-          {({ error, loading, searchedTodos, completeTodo, deleteTodo }) => (
-            <TodoList>
-              {error && <p>Hubo un error...</p>}
-              {loading && <p>Cargando...</p>}
-              {!loading && !searchedTodos.length && (
-                <p>¡Crea tu primer TODO!</p>
-              )}
-              {searchedTodos.map((todo, index) => (
-                <TodoItem
-                  text={todo.text}
-                  key={index}
-                  complete={todo.completed}
-                  onComplete={() => completeTodo(todo.text)}
-                  onDelete={() => deleteTodo(todo.text)}
-                />
-              ))}
-            </TodoList>
-          )}
-        </TodoContext.Consumer>
+        <TodoList>
+          {error && <p>Hubo un error...</p>}
+          {loading && <p>Cargando...</p>}
+          {!loading && !searchedTodos.length && <p>¡Crea tu primer TODO!</p>}
+          {searchedTodos.map((todo, index) => (
+            <TodoItem
+              text={todo.text}
+              key={index}
+              complete={todo.completed}
+              onComplete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          ))}
+        </TodoList>
         <CreateTodoButton />
       </Wrapper>
     </>
