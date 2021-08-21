@@ -1,0 +1,38 @@
+.TodoItem {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  margin: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  grid-template-rows: 6rem;
+  align-items: center;
+  position: relative;
+}
+
+.TodoItem-check {
+  margin-left: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.TodoItem-check.checked {
+  color: greenyellow;
+}
+
+.TodoCompleted {
+  text-decoration: line-through;
+}
+
+.TodoItem button {
+  background: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  user-select: none;
+}

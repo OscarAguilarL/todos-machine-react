@@ -1,0 +1,23 @@
+.CreateTodoButton {
+  border: none;
+  background: #310a90;
+  position: fixed;
+  bottom: 100px;
+  right: 22rem;
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.CreateTodoButton::before {
+  content: '+';
+  font-size: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .CreateTodoButton {
+    right: 12px;
+  }
+}

@@ -1,0 +1,19 @@
+.TodoSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.42);
+}
