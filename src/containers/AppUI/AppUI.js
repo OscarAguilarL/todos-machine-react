@@ -8,6 +8,7 @@ import { TodoList } from '../../components/TodoList/TodoList';
 import { TodoSearch } from '../../components/TodoSearch/TodoSearch';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { Modal } from '../../components/Modal/Modal';
+import CreateTodoForm from '../../components/CreateTodoForm/CreateTodoForm';
 
 export const AppUI = () => {
   const {
@@ -17,7 +18,6 @@ export const AppUI = () => {
     completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal,
   } = useContext(TodoContext);
 
   return (
@@ -41,7 +41,7 @@ export const AppUI = () => {
         </TodoList>
         {openModal && (
           <Modal>
-            <p>{searchedTodos[0]?.text}</p>
+            <CreateTodoForm />
           </Modal>
         )}
         <CreateTodoButton />

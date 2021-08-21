@@ -34,8 +34,15 @@ const TodoProvider = ({ children }) => {
     const newTodos = [...todos];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
 
-    console.log('complete');
+    saveTodos(newTodos);
+  };
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      completed: false,
+      text,
+    });
     saveTodos(newTodos);
   };
 
@@ -63,7 +70,8 @@ const TodoProvider = ({ children }) => {
           completeTodo,
           deleteTodo,
           openModal,
-          setOpenModal
+          setOpenModal,
+          addTodo,
         }}
       >
         {children}
